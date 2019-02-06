@@ -7,7 +7,7 @@
 <body>
 
 <div th:if="${addressBooks.size() == 0}">
-    <p>No Address Books have been created!....</p>
+    <p>you have successfully testted</p>
 </div>
 <div th:if="${addressBooks.size() > 0}" th:each="addressBook : ${addressBooks}">
     <h1 th:text="${addressBook.getId()}"></h1>
