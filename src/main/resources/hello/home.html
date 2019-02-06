@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Address Book App</title>
+</head>
+<body>
+
+<div th:if="${addressBooks.size() == 0}">
+    <p>No Address Books have been created!</p>
+</div>
+<div th:if="${addressBooks.size() > 0}" th:each="addressBook : ${addressBooks}">
+    <h1 th:text="${addressBook.getId()}"></h1>
+    <span th:each="buddy : ${addressBook.getBuddyInfoList()}">
+        <p th:text="${buddy.getName() + ' ' + buddy.getAddress() + ' ' + buddy.getPhoneNumber()}"></p>
+    </span>
+</div>
+
+</body>
+</html>
